@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Форма входа</title>
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: #F3CCD5;
+    }
+    .rusenok{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      padding: 40px;
+      transform: translate(-50%, -50%);
+      background: #de3a3a;
+      box-sizing: border-box;
+      box-shadow: 0 15px 25px #AE3331;
+      border-radius: 10px;
+    }
+    .rusenok h2 {
+      margin: 0 0 30px;
+      padding: 0;
+      color: white;
+      text-align: center;
+    }
+    .rusenok .filek {
+      position: relative;
+    }
+    .rusenok .filek input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: white;
+      margin-bottom: 30px;
+      border: none;
+      border-bottom: 1px solid white;
+      outline: none;
+      background: transparent;
+    }
+    .rusenok .filek label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #F3CCD5;
+      pointer-events: none;
+      transition: 0.7s;
+    }
+    .rusenok .filek input:focus~label,
+    .rusenok .filek input:valid~label {
+      top: -20px;
+      left: 0;
+      color: white;
+      font-size: 12px;
+    }
+
+ .button {
+  background-color: #f9c6c9;
+  color: #fff;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  animation: pulse 2s infinite;
+}
+
+.button:before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+  z-index: -1;
+}
+
+.button:hover {
+  background-color: #red;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover:before {
+  transform: rotate(135deg);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+    
+
+    
+  </style>
+</head>
+<body>
+  <div class="rusenok">
+    <h2>Телепорт к Филечке</h2>
+    <form></form>
+    <div class="filek">
+      <input type="text" id="login" required>
+      <label for="login">Логин:</label>
+    </div>
+    <div class="filek">
+      <input type="password" id="password" required>
+      <label for="password">Пароль:</label>
+    </div>
+   <input class='button'type="button" value="Войти" onclick="login()">
+ </form>
+  </div>
+
+  <script>
+    function login() {
+      const loginInput = document.getElementById('login').value;
+      const passwordInput = document.getElementById('password').value;
+
+     if (!loginInput) {
+  alert("Введите логин, чтобы попасть к Филечке");
+} else if (!passwordInput) {
+  alert("Введите пароль, чтобы попасть к Филечке");
+} else if (loginInput === "я тебя люблю" && passwordInput === "я тебя люблю") {
+  alert("Я тебя очень люблю, и скучаю, и у меня до сих пор есть привязанность к тебе:с");
+} else {
+  alert("Вот бы так действительно все работало, и ты оказался у меня");
+}
+    }
+  </script>
+</body>
+</html>
